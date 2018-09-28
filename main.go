@@ -30,6 +30,7 @@ type YAMLContainer struct {
 
 func main() {
 	dir := flag.String("dir", "./yamlfiles", "path to yaml files")
+	flag.Parse()
 	filesInDir, err := ioutil.ReadDir(*dir)
 	if err != nil {
 		log.Fatal(err)
