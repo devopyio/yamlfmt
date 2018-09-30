@@ -8,7 +8,7 @@ go get -u github.com/devopyio/yamlfmt
 
 ## Usage
 
-yaml-cleaner -filename example.yaml
+yamlfmt -filename example.yaml
 
 ```
 "groups": 
