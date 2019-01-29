@@ -8,7 +8,17 @@ go get -u github.com/devopyio/yamlfmt
 
 ## Usage
 
+```
+cat example.yaml | yamlfmt
+```
+
+Or you can simply execute:
+
+```
 yamlfmt -filename example.yaml
+```
+
+Example:
 
 ```
 "groups": 

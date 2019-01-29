@@ -13,26 +13,42 @@ func main() {
 
 	flag.Parse()
 
-	yamlFile, err := os.OpenFile(*file, os.O_RDWR, 0644)
-	if err != nil {
-		log.Fatal(err)
+	var (
+		yamlFile      *os.File
+		yamlFileOut   *os.File
+		err           error
+		overwriteFile bool
+	)
+	if *file != "" {
+		overwriteFile = true
+		yamlFile, err = os.OpenFile(*file, os.O_RDWR, 0644)
+		if err != nil {
+			log.Fatalf("could not open file: %v", err)
+		}
+
+		yamlFileOut = yamlFile
+		defer yamlFile.Close()
+	} else {
+		yamlFile = os.Stdin
+		yamlFileOut = os.Stdout
 	}
-	defer yamlFile.Close()
 
 	var out interface{}
 	if err = yaml.NewDecoder(yamlFile).Decode(&out); err != nil {
-		log.Fatal(err)
+		log.Fatalf("could not decode file: %v", err)
 	}
 
-	if err = yamlFile.Truncate(0); err != nil {
-		log.Fatal(err)
-	}
-	if _, err = yamlFile.Seek(0, 0); err != nil {
-		log.Fatal(err)
+	if overwriteFile {
+		if err = yamlFileOut.Truncate(0); err != nil {
+			log.Fatalf("could not truncate file: %v", err)
+		}
+		if _, err = yamlFileOut.Seek(0, 0); err != nil {
+			log.Fatalf("could not seek file: %v", err)
+		}
 	}
 
-	err = yaml.NewEncoder(yamlFile).Encode(out)
+	err = yaml.NewEncoder(yamlFileOut).Encode(out)
 	if err != nil {
-		log.Fatal(err)
+		log.Fatalf("could not encode file: %v", err)
 	}
 }
