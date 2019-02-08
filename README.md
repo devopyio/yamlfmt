@@ -15,7 +15,7 @@ sudo snap install yamlfmt
 ### Brew 
 
 ```
-brew install github.com/devopyio/yamlfmt
+brew install devopyio/yamlfmt/yamlfmt
 ```
 
 ### Using go get
