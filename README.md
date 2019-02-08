@@ -6,7 +6,23 @@ Formats yaml files.
 
 ## Install
 
+### Linux:
+
+```
+sudo snap install yamlfmt
+```
+
+### Brew 
+
+```
+brew install github.com/devopyio/yamlfmt
+```
+
+### Using go get
+
+```
 go get -u github.com/devopyio/yamlfmt
+```
 
 ## Usage
 
