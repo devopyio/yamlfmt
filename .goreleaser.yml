@@ -3,10 +3,39 @@
 builds:
 - env:
   - CGO_ENABLED=0
+  goos:
+    - freebsd
+    - linux
+    - darwin
+    - windows
+
+  # GOARCH to build for.
+  # For more info refer to: https://golang.org/doc/install/source#environment
+  # Defaults are 386 and amd64.
+  goarch:
+    - amd64
+    - arm
+    - arm64
+    - 386
+
+  # GOARM to build for when GOARCH is arm.
+  # For more info refer to: https://golang.org/doc/install/source#environment
+  # Default is only 6.
+  goarm:
+    - 6
+    - 7
+
 checksum:
   name_template: 'checksums.txt'
 snapshot:
   name_template: "{{ .Tag }}-next"
+archive:
+  replacements:
+    darwin: Darwin
+    linux: Linux
+    windows: Windows
+    386: i386
+    amd64: x86_64
 changelog:
   sort: asc
   filters:
