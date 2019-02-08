@@ -1,5 +1,7 @@
 # yamlfmt
 
+![Build Status](https://travis-ci.com/devopyio/yamlfmt.svg?branch=master)
+
 Formats yaml files.
 
 ## Install
