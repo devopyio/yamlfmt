@@ -124,3 +124,31 @@ brew:
   #install: |
   #  bin.install "program"
   #  ...
+scoop:
+  # Template for the url.
+  # Default is "https://github.com/<repo_owner>/<repo_name>/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
+  #url_template: "http://github.mycompany.com/foo/bar/releases/{{ .Tag }}/{{ .ArtifactName }}"
+
+  # Repository to push the app manifest to.
+  bucket:
+    owner: devopyio
+    name: scoop-yamlfmt
+
+  # Git author used to commit to the repository.
+  # Defaults are shown.
+  commit_author:
+    name: devopyio
+    email: info@devopy.io
+
+  # Your app's homepage.
+  # Default is empty.
+  homepage: "https://devopy.io/"
+
+  # Your app's description.
+  # Default is empty.
+  description: "Formats yaml files"
+
+  # Your app's license
+  # Default is empty.
+  license: Apache-2.0
+

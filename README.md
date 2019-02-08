@@ -18,6 +18,12 @@ sudo snap install yamlfmt
 brew install devopyio/yamlfmt/yamlfmt
 ```
 
+### Windows
+
+```
+scoop bucket add yamlfmt https://github.com/devopyio/scoop-yamlfmt
+scoop install yamlfmt
+```
 ### Using go get
 
 ```
