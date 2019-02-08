@@ -64,3 +64,53 @@ snapcraft:
   # are explained later. More info about confinement here:
   # https://snapcraft.io/docs/reference/confinement
   confinement: strict
+
+brew:
+  name: yamlfmt
+
+  # Repository to push the tap to.
+  github:
+    owner: devopyio
+    name: yamlfmt
+
+  # Template for the url.
+  # Default is "https://github.com/<repo_owner>/<repo_name>/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
+  #url_template: "http://github.com/devopyio/yamlfmt/releases/{{ .Tag }}/{{ .ArtifactName }}"
+
+  # Git author used to commit to the repository.
+  # Defaults are shown.
+  commit_author:
+    name: devopyio
+    email: info@devopy.io
+
+  # Caveats for the user of your binary.
+  # Default is empty.
+  caveats: "cat example.yaml | yamlfmt or yamlfmt -filename example.yaml"
+
+  # Your app's homepage.
+  # Default is empty.
+  homepage: "https://devopy.io/"
+
+  # Your app's description.
+  # Default is empty.
+  description: "Formats yaml files."
+
+  # Setting this will prevent goreleaser to actually try to commit the updated
+  # formula - instead, the formula file will be stored on the dist folder only,
+  # leaving the responsibility of publishing it to the user.
+  # If set to auto, the release will not be uploaded to the homebrew tap
+  # in case there is an indicator for prerelease in the tag e.g. v1.0.0-rc1
+  # Default is false.
+  #skip_upload: true
+
+    # So you can `brew test` your formula.
+  # Default is empty.
+  #test: |
+  #  system "#{bin}/program --version"
+  #  ...
+
+  # Custom install script for brew.
+  # Default is 'bin.install "program"'.
+  #install: |
+  #  bin.install "program"
+  #  ...
