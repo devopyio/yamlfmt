@@ -81,7 +81,7 @@ brew:
   # Repository to push the tap to.
   github:
     owner: devopyio
-    name: yamlfmt
+    name: homebrew-yamlfmt
 
   # Template for the url.
   # Default is "https://github.com/<repo_owner>/<repo_name>/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
