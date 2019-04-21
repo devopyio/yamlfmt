@@ -1,6 +1,9 @@
 # yamlfmt
 
 ![Build Status](https://travis-ci.com/devopyio/yamlfmt.svg?branch=master)
+[![yamlfmt](https://snapcraft.io/yamlfmt/badge.svg)](https://snapcraft.io/yamlfmt)
+
+[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-white.svg)](https://snapcraft.io/yamlfmt)
 
 Formats yaml files.
 
