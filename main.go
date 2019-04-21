@@ -10,9 +10,12 @@ import (
 
 func main() {
 	file := flag.String("filename", "", "filename")
-
+	fileShort := flag.String("f", "", "filename")
 	flag.Parse()
 
+	if *file == "" && *fileShort != "" {
+		file = fileShort
+	}
 	var (
 		yamlFile      *os.File
 		yamlFileOut   *os.File
